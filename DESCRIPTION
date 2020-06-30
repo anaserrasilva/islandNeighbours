@@ -1,0 +1,16 @@
+Package: islandNeighbours
+Title: Extracts and saves 1-NNI islands from phylogenetic tree distributions
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Ana",
+           family = "Serra Silva",
+           role = c("aut", "cre"),
+           email = "a.da-silva@nhm.ac.uk",
+           comment = c(ORCID = "0000-0001-8020-3227"))
+Description: Extracts NNI islands from multiphylo objects.
+License: MIT + file LICENSE
+Depends: R (>= 3.5.0), ape, phangorn, phytools, thacklr
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
