@@ -34,20 +34,19 @@ nniNeighbourhoods<-function(tree, verbose = TRUE)
     n <- phangorn::nni(tree[[i]])
 	if (ape::is.binary(tree[[i]]) == FALSE) warning('You have trees with polytomies, the package cannot place them into islands yet.')
     for (j in 1:length(n)) {
-      for (k in 1:l) {
-		  #keep only the trees in the NNI neighbourhood that are also in the tree file
-		    if (verbose == TRUE) {
-			  print(paste("At", i, "of", l, "trees and", j, "of", length(n), "NNI trees", sep=" "))
-		    }
-        
-        if (ape::all.equal.phylo(n[[j]], tree[[k]], use.edge.length = F) == T) {
+		if (verbose == TRUE) {
+			print(paste("At", i, "of", l, "trees and", j, "of", length(n), "NNI trees", sep=" "))
+		}
+        for (k in 1:l) {
+			#keep only the trees in the NNI neighbourhood that are also in the tree file
+			if (ape::all.equal.phylo(n[[j]], tree[[k]], use.edge.length = F) == T) {
 			    a <- c(a, phytools::as.multiPhylo(tree[[i]]))
 			    a <- c(a, phytools::as.multiPhylo(n[[j]]))
+			}
+			else {
+			a <- c(a, phytools::as.multiPhylo(tree[[i]]))
+			}
         }
-        else {
-          a <- c(a, phytools::as.multiPhylo(tree[[i]]))
-        }
-      }
     }
     a <- ape::unique.multiPhylo(thacklr::as.multiPhylo.list(a), use.edge.length = F)
     NNIneigh[[counter]] <- a

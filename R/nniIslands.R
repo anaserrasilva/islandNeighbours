@@ -95,6 +95,5 @@ nniIslands<-function(neighbourhoods, verbose = TRUE)
   }
   else {
     return(islands)
-    #break
   }
 }
