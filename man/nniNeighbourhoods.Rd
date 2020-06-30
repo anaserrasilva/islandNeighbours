@@ -7,15 +7,15 @@
 nniNeighbourhoods(tree, verbose = TRUE)
 }
 \arguments{
-\item{tree}{an object of class "multiphylo"}
+\item{tree}{an object of class "multiPhylo"}
 
 \item{verbose}{Prints the function's progress. Defaults to TRUE}
 }
 \value{
-List of "multiphylo" objects
+List of "multiPhylo" objects
 }
 \description{
-This function extracts the 1-NNI neighbourhoods from a multiphylo object, it generates a list of multiphylo objects containing all trees shared between each tree's NNI neighbourhood and the multiphylo object.
+This function extracts the 1-NNI neighbourhoods from a multiPhylo object, it generates a list of multiPhylo objects containing all trees shared between each tree's NNI neighbourhood and the multiPhylo object.
 At this time the package cannot place unresolved trees into islands.
 }
 \examples{
@@ -26,6 +26,5 @@ islands <- nniIslands(neighbourhoods)
 
 }
 \references{
-Maddison (1991) Syst Zool 40:315-328
-(\href{https://doi.org/10.1093/sysbio/40.3.315}{OUP})
+Maddison, D. R. (1991) \href{https://doi.org/10.1093/sysbio/40.3.315}{The discovery and importance of multiple islands of most-parsimonious trees}. \emph{Syst. Zool.}, 40:315-328
 }

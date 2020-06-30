@@ -7,7 +7,7 @@
 write.islands(islands)
 }
 \arguments{
-\item{islands}{list of objects of class "multiphylo"}
+\item{islands}{list of objects of class "multiPhylo"}
 }
 \value{
 None
@@ -23,6 +23,5 @@ islands <- nniIslands(neighbourhoods)
 
 }
 \references{
-Maddison (1991) Syst Zool 40:315-328
-(\href{https://doi.org/10.1093/sysbio/40.3.315}{OUP})
+Maddison, D. R. (1991) \href{https://doi.org/10.1093/sysbio/40.3.315}{The discovery and importance of multiple islands of most-parsimonious trees}. \emph{Syst. Zool.}, 40:315-328
 }

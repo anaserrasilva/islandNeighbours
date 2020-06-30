@@ -7,12 +7,12 @@
 nniIslands(neighbourhoods, verbose = TRUE)
 }
 \arguments{
-\item{neighbourhoods}{list of objects of class "multiphylo"}
+\item{neighbourhoods}{list of objects of class "multiPhylo"}
 
 \item{verbose}{Prints the function's progress. Defaults to TRUE}
 }
 \value{
-List of "multiphylo" objects
+List of "multiPhylo" objects
 }
 \description{
 This function merges the 1-NNI neighbourhoods outputted by \code{\link{nniNeighbourhoods}} with shared trees, until only the NNI islands are left.
@@ -23,4 +23,7 @@ neighbourhoods <- nniNeighbourhoods(testTrees)
 islands <- nniIslands(neighbourhoods)
 #write.islands(islands)
 
+}
+\references{
+Maddison, D. R. (1991) \href{https://doi.org/10.1093/sysbio/40.3.315}{The discovery and importance of multiple islands of most-parsimonious trees}. \emph{Syst. Zool.}, 40:315-328
 }

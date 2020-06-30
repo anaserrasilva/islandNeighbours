@@ -2,10 +2,10 @@
 #'
 #' This function merges the 1-NNI neighbourhoods outputted by \code{\link{nniNeighbourhoods}} with shared trees, until only the NNI islands are left.
 #'
-#' @param neighbourhoods list of objects of class "multiphylo"
+#' @param neighbourhoods list of objects of class "multiPhylo"
 #' @param verbose Prints the function's progress. Defaults to TRUE
 #'
-#' @return List of "multiphylo" objects
+#' @return List of "multiPhylo" objects
 #'
 #' @import ape
 #' phytools
@@ -16,6 +16,8 @@
 #' neighbourhoods <- nniNeighbourhoods(testTrees)
 #' islands <- nniIslands(neighbourhoods)
 #' #write.islands(islands)
+#'
+#' @references Maddison, D. R. (1991) \href{https://doi.org/10.1093/sysbio/40.3.315}{The discovery and importance of multiple islands of most-parsimonious trees}. \emph{Syst. Zool.}, 40:315-328
 #'
 #' @export 
 nniIslands<-function(neighbourhoods, verbose = TRUE) 

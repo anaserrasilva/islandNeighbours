@@ -1,12 +1,12 @@
 #' nniNeighbourhoods Function
 #'
-#' This function extracts the 1-NNI neighbourhoods from a multiphylo object, it generates a list of multiphylo objects containing all trees shared between each tree's NNI neighbourhood and the multiphylo object.
+#' This function extracts the 1-NNI neighbourhoods from a multiPhylo object, it generates a list of multiPhylo objects containing all trees shared between each tree's NNI neighbourhood and the multiPhylo object.
 #' At this time the package cannot place unresolved trees into islands.
 #'
-#' @param tree an object of class "multiphylo"
+#' @param tree an object of class "multiPhylo"
 #' @param verbose Prints the function's progress. Defaults to TRUE
 #'
-#' @return List of "multiphylo" objects
+#' @return List of "multiPhylo" objects
 #'
 #' @examples
 #' data(testTrees)
@@ -14,8 +14,7 @@
 #' islands <- nniIslands(neighbourhoods)
 #' #write.islands(islands)
 #'
-#' @references Maddison (1991) Syst Zool 40:315-328
-#' (\href{https://doi.org/10.1093/sysbio/40.3.315}{OUP}) 
+#' @references Maddison, D. R. (1991) \href{https://doi.org/10.1093/sysbio/40.3.315}{The discovery and importance of multiple islands of most-parsimonious trees}. \emph{Syst. Zool.}, 40:315-328 
 #'
 #' @import ape
 #' phangorn
