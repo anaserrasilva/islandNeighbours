@@ -29,7 +29,7 @@ neighbourhoods <- nniNeighbourhoods(testTrees) #outputs list with 10 multiPhylo 
 islands <- nniIslands(neighbourhoods) #outputs list with 2 multiPhylo objects, each with 5 trees
 
 #save each island to an individual tree file
-write.islands(islands) #outputs 2 Newick formated tree files, island_1.tre and island_2.tre
+write.islands(islands) #outputs 2 Newick formatted tree files, island_1.tre and island_2.tre
 ```
 
 There are two additional examples in the [supplementary materials](https://github.com/anaserrasilva/MajorityRuleAndTreeIslands/tree/master/PardoBayes_islands) for Serra Silva and Wilkinson (202#).
