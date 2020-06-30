@@ -15,7 +15,7 @@
 #'
 #' Maddison, D. R. (1991) \href{https://doi.org/10.1093/sysbio/40.3.315}{The discovery and importance of multiple islands of most-parsimonious trees}. \emph{Syst. Zool.}, 40:315-328
 #'
-#' @source \href{https://github.com/anaserrasilva/MajorityRuleAndTreeIslands}{GitHub}
+#' @source \href{https://github.com/anaserrasilva/MajorityRuleAndTreeIslands}{https://github.com/anaserrasilva/MajorityRuleAndTreeIslands}
 #'
 #' @examples
 #' data(testTrees)

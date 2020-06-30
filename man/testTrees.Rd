@@ -8,7 +8,7 @@
 An object of class "multiPhylo".
 }
 \source{
-\href{https://github.com/anaserrasilva/MajorityRuleAndTreeIslands}{GitHub}
+\href{https://github.com/anaserrasilva/MajorityRuleAndTreeIslands}{https://github.com/anaserrasilva/MajorityRuleAndTreeIslands}
 }
 \usage{
 data(testTrees)
