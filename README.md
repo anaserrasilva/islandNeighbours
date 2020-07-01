@@ -16,6 +16,15 @@ install_github("anaserrasilva/islandNeighbours")
 library(islandNeighbours)
 ```
 
+If this fails, try:
+
+```r
+library(devtools)
+install_github("thackl/thacklr")
+install_github("anaserrasilva/islandNeighbours")
+library(islandNeighbours)
+```
+
 ### Using *islandNeighbours*
 
 ```r
