@@ -9,7 +9,6 @@ Authors@R:
            comment = c(ORCID = "0000-0001-8020-3227"))
 Description: Extracts NNI islands from multiphylo objects.
 License: MIT + file LICENSE
-Remotes: git::https://github.com/thackl/thacklr.git
 Depends: R (>= 3.5.0), ape, phangorn, phytools, thacklr
 Encoding: UTF-8
 LazyData: true
