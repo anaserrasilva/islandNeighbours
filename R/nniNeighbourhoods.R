@@ -24,7 +24,8 @@
 #' @export 
 nniNeighbourhoods<-function(tree, verbose = TRUE)
 {
-  tree <- unroot.multiPhylo(tree)
+  tree <- ape::unroot.multiPhylo(tree)
+  tree <- ape::unique.multiPhylo(tree)
   l <- length(tree)
   a <- list()
   NNIneigh<-list()
@@ -34,7 +35,7 @@ nniNeighbourhoods<-function(tree, verbose = TRUE)
 	if (ape::is.binary(tree[[i]]) == FALSE) warning('You have trees with polytomies, the package cannot place them into islands yet.')
     for (j in 1:length(n)) {
 		if (verbose == TRUE) {
-			print(paste("At", i, "of", l, "trees and", j, "of", length(n), "NNI trees", sep=" "))
+			print(paste("At", i, "of", l, "unique trees and", j, "of", length(n), "NNI trees", sep=" "))
 		}
         for (k in 1:l) {
 			#keep only the trees in the NNI neighbourhood that are also in the tree file
