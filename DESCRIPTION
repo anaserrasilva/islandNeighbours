@@ -1,5 +1,5 @@
 Package: islandNeighbours
-Title: Extracts and saves 1-NNI islands from phylogenetic tree distributions
+Title: Extracts and saves 1-NNI and 2-NNI islands from phylogenetic tree distributions
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Ana",

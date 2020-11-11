@@ -9,7 +9,7 @@ nniNeighbourhoods(tree, verbose = TRUE)
 \arguments{
 \item{tree}{an object of class "multiPhylo"}
 
-\item{verbose}{Prints the function's progress. Defaults to TRUE}
+\item{verbose}{Prints the function's progress. Defaults to TRUE. If run in parallel set to FALSE.}
 }
 \value{
 List of "multiPhylo" objects
