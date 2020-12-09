@@ -61,6 +61,11 @@ xSDislands <- function(tree, threshold, output = list()){
   }
   #to call recursive function
   t2 <- tree
+  if (length(t2) == length(t)) {
+    if (length(ape::unique.multiPhylo(c(t2,t), use.edge.length = F)) != length(t)) {
+      xSDislands(t2, threshold, islands)
+    }
+  }
   if (length(t2) != length (t)) {
     xSDislands(t2, threshold, islands)
   }
