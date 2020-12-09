@@ -38,7 +38,7 @@ xSDislands <- function(tree, threshold, output = list()){
   s <- m[m[1,] <= x,]
   p[c( as.numeric(rownames(s)))] <- 'b'
   for (k in 2:l) {
-    print(paste("At tree", k, sep=''))
+    print(paste("At tree", k, sep=' '))
     if (p[k] == 'b') {
       s <- m[m[k,] <= x,]
       p[c(as.numeric(rownames(s)))] <- 'b'
