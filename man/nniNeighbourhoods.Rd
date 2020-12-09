@@ -21,7 +21,7 @@ At this time the package cannot place unresolved trees into islands.
 \examples{
 data(testTrees)
 neighbourhoods <- nniNeighbourhoods(testTrees)
-islands <- nniIslands(neighbourhoods)
+islands <- neighbourhoodMerger(neighbourhoods)
 #write.islands(islands)
 
 }

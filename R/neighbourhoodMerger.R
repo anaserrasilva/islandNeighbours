@@ -1,6 +1,6 @@
-#' nniIslands Function
+#' neighbourhoodMerger Function
 #'
-#' This function merges the 1-NNI neighbourhoods outputted by \code{\link{nniNeighbourhoods}} with shared trees, until only the NNI islands are left.
+#' This function merges the 1-NNI, 2-NNI or x-SD neighbourhoods outputted by \code{\link{nniNeighbourhoods,two_nniNeighbourhoods,xSDneighbourhoods}} with shared trees, until only the tree islands are left.
 #'
 #' @param neighbourhoods list of objects of class "multiPhylo"
 #' @param verbose Prints the function's progress. Defaults to TRUE
@@ -14,13 +14,13 @@
 #' @examples
 #' data(testTrees)
 #' neighbourhoods <- nniNeighbourhoods(testTrees)
-#' islands <- nniIslands(neighbourhoods)
+#' islands <- neighbourhoodMerger(neighbourhoods)
 #' #write.islands(islands)
 #'
 #' @references Maddison, D. R. (1991) \href{https://doi.org/10.1093/sysbio/40.3.315}{The discovery and importance of multiple islands of most-parsimonious trees}. \emph{Syst. Zool.}, 40:315-328
 #'
 #' @export 
-nniIslands<-function(neighbourhoods, verbose = TRUE) 
+neighbourhoodMerger<-function(neighbourhoods, verbose = TRUE) 
 {
   l <- length(neighbourhoods)
   m <- matrix(data=0, nrow=l, ncol=l)
@@ -29,7 +29,7 @@ nniIslands<-function(neighbourhoods, verbose = TRUE)
   index <- vector()
   for (i in 1:l) {
 	if (verbose == TRUE) {
-		print(paste("At", i, "of", l, "NNI neighbourhoods", sep=" "))
+		print(paste("At", i, "of", l, "neighbourhoods", sep=" "))
 	}
     for (j in 1:l) {
       #build matrix showing neighbourhoods with shared trees (TRUE stored as 1)
@@ -93,7 +93,7 @@ nniIslands<-function(neighbourhoods, verbose = TRUE)
     }
   }
   if (any(n == 1) == T) {
-    nniIslands(islands)
+    neighbourhoodMerger(islands)
   }
   else {
     return(islands)

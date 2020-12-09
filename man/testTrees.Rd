@@ -20,7 +20,7 @@ Running the example should yield 2 islands, each with 5 trees.
 \examples{
 data(testTrees)
 neighbourhoods <- nniNeighbourhoods(testTrees)
-islands <- nniIslands(neighbourhoods)
+islands <- neighbourhoodMerger(neighbourhoods)
 #write.islands(islands)
 }
 \references{

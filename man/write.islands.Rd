@@ -18,7 +18,7 @@ This function writes the NNI islands identified by \code{\link{nniIslands}} to i
 \examples{
 data(testTrees)
 neighbourhoods <- nniNeighbourhoods(testTrees)
-islands <- nniIslands(neighbourhoods)
+islands <- neighbourhoodMerger(neighbourhoods)
 #write.islands(islands)
 
 }

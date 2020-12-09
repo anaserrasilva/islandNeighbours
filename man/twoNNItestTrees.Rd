@@ -17,7 +17,7 @@ Running the example should yield 2 islands, one with 2 trees and one with a sing
 \examples{
 data(twoNNItestTrees)
 neighbourhoods <- nniNeighbourhoods(twoNNItestTrees)
-islands <- nniIslands(neighbourhoods)
+islands <- neighbourhoodMerger(neighbourhoods)
 #write.islands(islands)
 }
 \keyword{datasets}

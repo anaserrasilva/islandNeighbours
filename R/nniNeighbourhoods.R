@@ -11,7 +11,7 @@
 #' @examples
 #' data(testTrees)
 #' neighbourhoods <- nniNeighbourhoods(testTrees)
-#' islands <- nniIslands(neighbourhoods)
+#' islands <- neighbourhoodMerger(neighbourhoods)
 #' #write.islands(islands)
 #'
 #' @references Maddison, D. R. (1991) \href{https://doi.org/10.1093/sysbio/40.3.315}{The discovery and importance of multiple islands of most-parsimonious trees}. \emph{Syst. Zool.}, 40:315-328 

@@ -20,7 +20,7 @@
 #' @examples
 #' data(testTrees)
 #' neighbourhoods <- nniNeighbourhoods(testTrees)
-#' islands <- nniIslands(neighbourhoods)
+#' islands <- neighbourhoodMerger(neighbourhoods)
 #' #write.islands(islands)
 "testTrees"
 
@@ -41,6 +41,6 @@
 #' @examples
 #' data(twoNNItestTrees)
 #' neighbourhoods <- nniNeighbourhoods(twoNNItestTrees)
-#' islands <- nniIslands(neighbourhoods)
+#' islands <- neighbourhoodMerger(neighbourhoods)
 #' #write.islands(islands)
 "twoNNItestTrees"

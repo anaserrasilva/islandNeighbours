@@ -11,7 +11,7 @@
 #' @examples
 #' data(twoNNItestTrees)
 #' neighbourhoods <- nniNeighbourhoods(twoNNItestTrees)
-#' islands <- nniIslands(neighbourhoods)
+#' islands <- neighbourhoodMerger(neighbourhoods)
 #' #write.islands(islands)
 #'
 #' @import ape
