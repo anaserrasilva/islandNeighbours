@@ -1,6 +1,6 @@
 #' neighbourhoodMerger Function
 #'
-#' This function merges the 1-NNI, 2-NNI or x-SD neighbourhoods outputted by \code{\link{nniNeighbourhoods,two_nniNeighbourhoods,xSDneighbourhoods}} with shared trees, until only the tree islands are left.
+#' This function merges the 1-NNI, 2-NNI or x-SD neighbourhoods outputted by \code{\link{nniNeighbourhoods}}, \code{\link{two_nniNeighbourhoods}} and \code{\link{xSDneighbourhoods}} with shared trees, until only the tree islands are left.
 #'
 #' @param neighbourhoods list of objects of class "multiPhylo"
 #' @param verbose Prints the function's progress. Defaults to TRUE

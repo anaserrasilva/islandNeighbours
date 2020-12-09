@@ -22,7 +22,7 @@ At this time the package might not accurately place unresolved trees into island
 }
 \examples{
 data(testTrees)
-neighbourhoods <- xSDneighbourhoods(testTrees)
+neighbourhoods <- xSDneighbourhoods(testTrees, threshold = 2)
 islands <- neighbourhoodMerger(neighbourhoods)
 #write.islands(islands)
 

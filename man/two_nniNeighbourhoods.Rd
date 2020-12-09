@@ -15,7 +15,7 @@ two_nniNeighbourhoods(tree, verbose = TRUE)
 List of "multiPhylo" objects
 }
 \description{
-This function extracts the 2-NNI neighbourhoods from a multiPhylo object, it generates a list of multiPhylo objects containing all trees shared between each tree's NNI neighbourhood and the multiPhylo object.
+This function extracts the 2-NNI neighbourhoods from a multiPhylo object, it generates a list of multiPhylo objects containing all trees shared between each tree's 2-NNI neighbourhood and the multiPhylo object.
 At this time the package cannot place unresolved trees into islands.
 }
 \examples{

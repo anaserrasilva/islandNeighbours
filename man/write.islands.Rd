@@ -13,7 +13,7 @@ write.islands(islands)
 None
 }
 \description{
-This function writes the NNI islands identified by \code{\link{nniIslands}} to individual Newick format tree files.
+This function writes the NNI or SD islands identified by \code{\link{neighbourhoodMerger}}, \code{\link{xSDislands}} to individual Newick format tree files.
 }
 \examples{
 data(testTrees)

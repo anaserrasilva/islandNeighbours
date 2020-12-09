@@ -63,7 +63,7 @@ data(testTrees) #multiPhylo with 10 trees
 
 ##using neighbourhood extraction and merging
 #extract NNI neighbourhoods
-neighbourhoods <- xSDneighbourhoods(testTrees) #outputs list with 10 multiPhylo objects
+neighbourhoods <- xSDneighbourhoods(testTrees, threshold = 2) #outputs list with 10 multiPhylo objects
 
 #merge neighbourhoods with shared trees to obtain NNI islands
 islands <- neighbourhoodMerger(neighbourhoods) #outputs list with 2 multiPhylo objects, each with 5 trees

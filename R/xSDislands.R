@@ -53,7 +53,7 @@ xSDislands <- function(tree, threshold, output = list()){
       t <- tree[c(as.numeric(r))]
     }
   }
-  t <- ape::unique.multiPhylo(as.multiPhylo.list(t), use.edge.length = F)
+  t <- ape::unique.multiPhylo(thacklr::as.multiPhylo.list(t), use.edge.length = F)
   islands[[counter]] <- t
   #counter = counter + 1
   if (length(t) != length(tree)) {

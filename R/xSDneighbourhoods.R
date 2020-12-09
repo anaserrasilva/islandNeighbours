@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' data(testTrees)
-#' neighbourhoods <- xSDneighbourhoods(testTrees)
+#' neighbourhoods <- xSDneighbourhoods(testTrees, threshold = 2)
 #' islands <- neighbourhoodMerger(neighbourhoods)
 #' #write.islands(islands)
 #'
@@ -35,13 +35,13 @@ xSDneighbourhoods<-function(tree, verbose = TRUE, threshold)
   SDneigh<-list()
   counter = 1
   for (i in 1:l) {
+    if (verbose == TRUE) {
+      print(paste("At", i, "of", l, "unique trees", sep=" "))
+    }
     s <- m[m[i,] <= x,]
     n <- tree[as.numeric(rownames(s))]
     if (ape::is.binary(tree[[i]]) == FALSE) warning('You have trees with polytomies, please check island make-up to ensure all trees in the island are connected.')
     for (j in 1:length(n)) {
-      if (verbose == TRUE) {
-        print(paste("At", i, "of", l, "unique trees and tree", j, "of", length(n), "trees within", x, "SD of tree", i, sep=" "))
-      }
       for (k in 1:l) {
         #keep only the trees in the NNI neighbourhood that are also in the tree file
         if (ape::all.equal.phylo(n[[j]], tree[[k]], use.edge.length = F) == T) {
