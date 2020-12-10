@@ -9,7 +9,7 @@ Authors@R:
            comment = c(ORCID = "0000-0001-8020-3227"))
 Description: Extracts NNI islands from multiphylo objects.
 License: MIT + file LICENSE
-Depends: R (>= 3.5.0), ape, phangorn, phytools, thacklr
+Depends: R (>= 3.5.0), ape, phangorn, phytools, thacklr, rwty
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

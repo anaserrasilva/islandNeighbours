@@ -21,6 +21,7 @@
 #' phangorn
 #' phytools
 #' thacklr
+#' rwty
 #'
 #' @export 
 xSDislands <- function(tree, threshold, output = list()){
@@ -29,7 +30,7 @@ xSDislands <- function(tree, threshold, output = list()){
   l <- length(tree)
   x <- threshold
   islands = output
-  m <- phytools::multiRF(tree)
+  m <- rwty::tree.dist.matrix(tree)
   rownames(m) <- c(1:l)
   counter = 1 + length(islands)
   #adding property, equivalent of colour in graph-based clustering approaches

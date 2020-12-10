@@ -21,6 +21,7 @@
 #' phangorn
 #' phytools
 #' thacklr
+#' rwty
 #'
 #' @export 
 xSDneighbourhoods<-function(tree, verbose = TRUE, threshold)
@@ -28,7 +29,7 @@ xSDneighbourhoods<-function(tree, verbose = TRUE, threshold)
   tree <- ape::unroot.multiPhylo(tree)
   tree <- ape::unique.multiPhylo(tree)
   l <- length(tree)
-  m <- phytools::multiRF(tree)
+  m <- rwty::tree.dist.matrix(tree)
   rownames(m) <- c(1:l)
   x <- threshold
   a <- list()
