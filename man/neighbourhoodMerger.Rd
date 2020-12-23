@@ -15,7 +15,7 @@ neighbourhoodMerger(neighbourhoods, verbose = TRUE)
 List of "multiPhylo" objects
 }
 \description{
-This function merges the 1-NNI, 2-NNI or x-SD neighbourhoods outputted by \code{\link{nniNeighbourhoods}}, \code{\link{two_nniNeighbourhoods}} and \code{\link{xSDneighbourhoods}} with shared trees, until only the tree islands are left.
+This function merges the 1-NNI, 2-NNI or x-SD neighbourhoods outputted by \code{\link{nniNeighbourhoods}}, \code{\link{two_nniNeighbourhoods}} and \code{\link{xRFneighbourhoods}} with shared trees, until only the tree islands are left.
 }
 \examples{
 data(testTrees)

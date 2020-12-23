@@ -1,6 +1,6 @@
 #' write.islands Function
 #'
-#' This function writes the NNI or SD islands identified by \code{\link{neighbourhoodMerger}}, \code{\link{xSDislands}} to individual Newick format tree files.
+#' This function writes the NNI or SD islands identified by \code{\link{neighbourhoodMerger}}, \code{\link{xRFislands}} and \code{\link{xQDislands}} to individual Newick format tree files.
 #'
 #' @param islands list of objects of class "multiPhylo"
 #'

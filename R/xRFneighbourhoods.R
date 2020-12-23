@@ -1,17 +1,17 @@
-#' xSDneighbourhoods Function
+#' xRFneighbourhoods Function
 #'
-#' This function extracts the x-SD neighbourhoods from a multiPhylo object, it generates a list of multiPhylo objects containing all trees shared between each tree's x-SD neighbourhood and the multiPhylo object.
+#' This function extracts the x-RF neighbourhoods from a multiPhylo object, it generates a list of multiPhylo objects containing all trees shared between each tree's x-RF neighbourhood and the multiPhylo object.
 #' At this time the package might not accurately place unresolved trees into islands.
 #'
 #' @param tree an object of class "multiPhylo"
 #' @param verbose Prints the function's progress. Defaults to TRUE. If run in parallel set to FALSE.
-#' @param threshold A numeric value setting the x-SD island threshold
+#' @param threshold A numeric value setting the x-RF island threshold
 #'
 #' @return List of "multiPhylo" objects
 #'
 #' @examples
 #' data(testTrees)
-#' neighbourhoods <- xSDneighbourhoods(testTrees, threshold = 2)
+#' neighbourhoods <- xRFneighbourhoods(testTrees, threshold = 2)
 #' islands <- neighbourhoodMerger(neighbourhoods)
 #' #write.islands(islands)
 #'
@@ -24,7 +24,7 @@
 #' rwty
 #'
 #' @export 
-xSDneighbourhoods<-function(tree, verbose = TRUE, threshold)
+xRFneighbourhoods<-function(tree, verbose = TRUE, threshold)
 {
   tree <- ape::unroot.multiPhylo(tree)
   tree <- ape::unique.multiPhylo(tree)
@@ -33,7 +33,7 @@ xSDneighbourhoods<-function(tree, verbose = TRUE, threshold)
   rownames(m) <- c(1:l)
   x <- threshold
   a <- list()
-  SDneigh<-list()
+  RFneigh<-list()
   counter = 1
   for (i in 1:l) {
     if (verbose == TRUE) {
@@ -55,9 +55,9 @@ xSDneighbourhoods<-function(tree, verbose = TRUE, threshold)
       }
     }
     a <- ape::unique.multiPhylo(thacklr::as.multiPhylo.list(a), use.edge.length = F)
-    SDneigh[[counter]] <- a
+    RFneigh[[counter]] <- a
     a <- list()
     counter = counter + 1
   }
-  SDneigh <- unique(SDneigh)
+  RFneigh <- unique(RFneigh)
 }

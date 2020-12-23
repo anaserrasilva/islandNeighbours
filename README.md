@@ -61,6 +61,14 @@ For x-SD islands
 #load example file provided in package
 data(testTrees) #multiPhylo with 10 trees
 
+##using algorithm similar to graph colouring, but without the graphs
+#We recommend you use this function, since this is the faster method
+#WARNING Always add output = list() parameter, this is needed for the recursion to work!
+islands <- xSDislands(testTrees, threshold = 2, output = list()) #outputs list with 2 multiPhylo objects, each with 5 trees
+
+#save each island to an individual tree file
+write.islands(islands) #outputs 2 Newick formatted tree files, island_1.tre and island_2.tre
+
 ##using neighbourhood extraction and merging
 #extract NNI neighbourhoods
 neighbourhoods <- xSDneighbourhoods(testTrees, threshold = 2) #outputs list with 10 multiPhylo objects
@@ -71,13 +79,6 @@ islands <- neighbourhoodMerger(neighbourhoods) #outputs list with 2 multiPhylo o
 #save each island to an individual tree file
 write.islands(islands) #outputs 2 Newick formatted tree files, island_1.tre and island_2.tre
 
-##using algorithm similar to graph colouring, but without the graphs
-#merge neighbourhoods with shared trees to obtain NNI islands
-#WARNING Always add output = list() parameter, this is needed for the recursion to work!
-islands <- xSDislands(testTrees, threshold = 2, output = list()) #outputs list with 2 multiPhylo objects, each with 5 trees
-
-#save each island to an individual tree file
-write.islands(islands) #outputs 2 Newick formatted tree files, island_1.tre and island_2.tre
 ```
 
 For large tree distributions (>500 trees) it is advisable to run the neighbourhood extraction in parallel, please set verbose = FALSE.
