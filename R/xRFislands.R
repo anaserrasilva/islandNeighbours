@@ -1,8 +1,8 @@
 #' xRFislands Function
 #'
 #' This function recursively computes the Robinson-Foulds distance matrix for a tree distribution and extracts the x-RF islands.
-#' The 
 #' At this time the package might not accurately place unresolved trees into islands.
+#' If you are expecting your tree distribution to be made up of mostly single tree islands, set options(expressions=500000) before analysis.
 #'
 #' @param tree An object of class "multiPhylo"
 #' @param threshold A numeric value setting the x-RF island threshold
