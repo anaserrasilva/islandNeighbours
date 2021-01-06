@@ -2,14 +2,20 @@ Package: islandNeighbours
 Title: Extracts and saves 1-NNI, 2-NNI, x-RF and x-QD islands from phylogenetic tree distributions
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Ana",
+    c(person(given = "Ana",
            family = "Serra Silva",
            role = c("aut", "cre"),
            email = "a.da-silva@nhm.ac.uk",
-           comment = c(ORCID = "0000-0001-8020-3227"))
+           comment = c(ORCID = "0000-0001-8020-3227")),
+	  person(given = "Mark",
+			family = "Wilkinson",
+			role = c("aut", "ths"),
+			email = "m.wilkinson@nhm.ac.uk",
+			comment = c(ORCID = "0000-0002-9459-8976")))
 Description: Extracts NNI islands from multiphylo objects.
 License: MIT + file LICENSE
-Depends: R (>= 3.5.0), ape, phangorn, phytools, thacklr, rwty, Quartet
+Depends: R (>= 4.0.0) 
+Imports: ape, phangorn, phytools, thacklr, rwty, Quartet
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
