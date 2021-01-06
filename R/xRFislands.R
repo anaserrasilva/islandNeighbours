@@ -8,6 +8,7 @@
 #' @param threshold A numeric value setting the x-RF island threshold
 #' @param output 'Dummy' parameter required for recursive function with changing number of inputs from first to subsequent rounds of the function. Please ALWAYS add 'output = list()' as a parameter. 
 #' @param verbose Prints the function's progress. Defaults to TRUE. If run in parallel set to FALSE.
+#' @param check.unique Parameter to check tree distribution is made up of unique trees. Defaults to TRUE for first round of recursion.
 #'
 #' @return List of "multiPhylo" objects
 #'
@@ -25,9 +26,11 @@
 #' rwty
 #'
 #' @export 
-xRFislands <- function(tree, threshold, output = list(), verbose = TRUE){
+xRFislands <- function(tree, threshold, output = list(), verbose = TRUE, check.unique = TRUE){
   tree <- ape::unroot.multiPhylo(tree)
-  tree <- ape::unique.multiPhylo(tree)
+  if (check.unique == TRUE) {
+    tree <- ape::unique.multiPhylo(tree)
+  }
   l <- length(tree)
   x <- threshold
   islands = output
@@ -72,7 +75,7 @@ xRFislands <- function(tree, threshold, output = list(), verbose = TRUE){
     return(islands)
   }
   if (length(ape::unique.multiPhylo(c(t2,t), use.edge.length = F)) != length(t2)) {
-    xRFislands(tree, threshold, islands)
+    xRFislands(tree, threshold, islands, check.unique = FALSE)
   }
   else {
     return(islands)
