@@ -9,7 +9,7 @@ xRFislands(
   threshold,
   output = list(),
   verbose = TRUE,
-  check.unique = TRUE
+  checkUnique = TRUE
 )
 }
 \arguments{
@@ -21,7 +21,7 @@ xRFislands(
 
 \item{verbose}{Prints the function's progress. Defaults to TRUE. If run in parallel set to FALSE.}
 
-\item{check.unique}{Parameter to check tree distribution is made up of unique trees. Defaults to TRUE for first round of recursion.}
+\item{checkUnique}{Parameter to check tree distribution is made up of unique trees. Defaults to TRUE for first round of recursion.}
 }
 \value{
 List of "multiPhylo" objects
@@ -29,7 +29,6 @@ List of "multiPhylo" objects
 \description{
 This function recursively computes the Robinson-Foulds distance matrix for a tree distribution and extracts the x-RF islands.
 At this time the package might not accurately place unresolved trees into islands.
-If you are expecting your tree distribution to be made up of mostly single tree islands, set options(expressions=500000) before analysis.
 }
 \examples{
 data(testTrees)

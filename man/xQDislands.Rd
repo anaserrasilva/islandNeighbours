@@ -4,7 +4,13 @@
 \alias{xQDislands}
 \title{xQDislands Function}
 \usage{
-xQDislands(tree, threshold, output = list(), verbose = TRUE)
+xQDislands(
+  tree,
+  threshold,
+  output = list(),
+  verbose = TRUE,
+  checkUnique = TRUE
+)
 }
 \arguments{
 \item{tree}{An object of class "multiPhylo"}
@@ -14,6 +20,8 @@ xQDislands(tree, threshold, output = list(), verbose = TRUE)
 \item{output}{'Dummy' parameter required for recursive function with changing number of inputs from first to subsequent rounds of the function. Please ALWAYS add 'output = list()' as a parameter.}
 
 \item{verbose}{Prints the function's progress. Defaults to TRUE. If run in parallel set to FALSE.}
+
+\item{checkUnique}{Parameter to check tree distribution is made up of unique trees. Defaults to TRUE for first round of recursion.}
 }
 \value{
 List of "multiPhylo" objects
