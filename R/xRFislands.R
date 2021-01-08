@@ -8,6 +8,7 @@
 #' @param threshold A numeric value setting the x-RF island threshold
 #' @param output 'Dummy' parameter required for recursive function with changing number of inputs from first to subsequent rounds of the function. Please ALWAYS add 'output = list()' as a parameter. 
 #' @param verbose Prints the function's progress. Defaults to TRUE. If run in parallel set to FALSE.
+#' @param checkUnique Parameter to check tree distribution is made up of unique trees. Defaults to TRUE for first round of recursion.
 #'
 #' @return List of "multiPhylo" objects
 #'
@@ -25,15 +26,32 @@
 #' rwty
 #'
 #' @export 
-xRFislands <- function(tree, threshold, output = list(), verbose = TRUE){
+xRFislands <- function(tree, threshold, output = list(), verbose = TRUE, checkUnique = TRUE){
   tree <- ape::unroot.multiPhylo(tree)
-  tree <- ape::unique.multiPhylo(tree)
+  if (checkUnique == TRUE) {
+    tree <- ape::unique.multiPhylo(tree)
+  }
   l <- length(tree)
   x <- threshold
   islands = output
   m <- rwty::tree.dist.matrix(tree)
   rownames(m) <- c(1:l)
   counter = 1 + length(islands)
+  #extract singleton islands
+  u = list()
+  for (y in 1:l) {
+    if (length(which(m[y,] <= x)) == 1){
+      islands[[counter]] <- phytools::as.multiPhylo(tree[[y]])
+      u[counter] <- as.numeric(y)
+      counter = counter + 1
+    }
+  }
+  if (length(u) != 0) {
+    tree <- tree[-c(as.numeric(u))]
+    l <- length(tree)
+    m <- rwty::tree.dist.matrix(tree)
+    rownames(m) <- c(1:l)
+  }
   #adding property, equivalent of colour in graph-based clustering approaches
   p <- rep(c('a'), times = l)
   p[1] <- 'b'
@@ -67,12 +85,12 @@ xRFislands <- function(tree, threshold, output = list(), verbose = TRUE){
   }
   #to call recursive function
   t2 <- tree
-  if (length(t2) == 1) {
-    islands[[counter+1]] <- t2
-    return(islands)
-  }
+  # if (length(t2) == 1) {
+  #   islands[[counter+1]] <- t2
+  #   return(islands)
+  # }
   if (length(ape::unique.multiPhylo(c(t2,t), use.edge.length = F)) != length(t2)) {
-    xRFislands(tree, threshold, islands)
+    xRFislands(tree, threshold, islands, checkUnique = FALSE)
   }
   else {
     return(islands)

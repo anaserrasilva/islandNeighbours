@@ -62,7 +62,7 @@ For x-RF islands
 #load example file provided in package
 data(testTrees) #multiPhylo with 10 trees
 
-##using algorithm similar to graph colouring, but without the graphs
+##using property algorithm analogous to graph colouring
 #We recommend you use this function, since this is the faster method
 #WARNING Always add output = list() parameter, this is needed for the recursion to work!
 islands <- xRFislands(testTrees, threshold = 2, output = list()) #outputs list with 2 multiPhylo objects, each with 5 trees
@@ -88,7 +88,7 @@ For x-QD islands
 #load example file provided in package
 data(testTrees) #multiPhylo with 10 trees
 
-##using algorithm similar to graph colouring, but without the graphs
+##using property algorithm analogous to graph colouring
 #We recommend you use this function, since this is the faster method
 #WARNING Always add output = list() parameter, this is needed for the recursion to work!
 islands <- xQDislands(testTrees, threshold = 6552, output = list()) #outputs list with 2 multiPhylo objects, each with 5 trees
@@ -119,6 +119,12 @@ Current functions unroot trees and ignore branch lengths, if there is enough int
 If you use *islandNeighbours* please cite:
 
 Serra Silva, A. and Wilkinson, M. (202#). On defining islands of trees and their effects on consensus. *In prep.*
+
+### Author contributions
+
+Serra Silva, A. implemented all functions and developed the x-NNI extraction algorithm
+
+Wilkinson, M. developed the property algorithm 
 
 
 ### Useful readings
