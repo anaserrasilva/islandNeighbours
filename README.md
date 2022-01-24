@@ -1,7 +1,7 @@
 # islandNeighbours
 ## R package to extract NNI, RF and QD islands from phylogenetic tree distributions
 
-The functions in this package were originally described in Serra Silva and Wilkinson (202#).
+The functions in this package were originally described in Serra Silva and Wilkinson (2021).
 
 ### What does *islandNeighbours* do?
 
@@ -118,7 +118,7 @@ Current functions unroot trees and ignore branch lengths, if there is enough int
 
 If you use *islandNeighbours* please cite:
 
-Serra Silva, A. and Wilkinson, M. (202#). On defining islands of trees and their effects on consensus. *In prep.*
+Serra Silva, Ana and Wilkinson, Mark (2021). [On Defining and Finding Islands of Trees and Mitigating Large Island Bias] (https://doi.org/10.1093/sysbio/syab015). Systematic Biology, 70(6), 1282-1294.
 
 ### Author contributions
 

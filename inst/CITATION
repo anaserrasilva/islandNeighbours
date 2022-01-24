@@ -1,0 +1,16 @@
+citHeader("To cite islandNeighbours in publications use:")
+
+citEntry(
+  entry    = "Article",
+  title    = "On Defining and Finding Islands of Trees and Mitigating Large Island Bias",
+  author   = "Serra Silva, Ana and Wilkinson, Mark",
+  journal  = "Systematic Biology",
+  year     = 2021,
+  volume   = 70,
+  number   = 6,
+  pages    = 1282-1294,
+  url      = "https://doi.org/10.1093/sysbio/syab015",
+  doi      = "10.1093/sysbio/syab015",
+  textVersion = paste("Serra Silva, Ana and Wilkinson, Mark (2021). On Defining and Finding Islands of Trees and Mitigating Large Island Bias. Systematic Biology, 70(6), 1282-1294, https://doi.org/10.1093/sysbio/syab015"))
+
+

@@ -2,7 +2,7 @@
 #'
 #' This function recursively computes the Robinson-Foulds distance matrix for a tree distribution and extracts the x-RF islands.
 #' At this time the package might not accurately place unresolved trees into islands.
-#' If you are expecting your tree distribution to be made up of mostly single tree islands, set options(expressions=500000) before analysis.
+#' If you are expecting your tree distribution to be made up of large numbers of very small islands, set options(expressions=500000) before analysis.
 #'
 #' @param tree An object of class "multiPhylo"
 #' @param threshold A numeric value setting the x-RF island threshold
@@ -39,6 +39,10 @@ xRFislands <- function(tree, threshold, output = list(), verbose = TRUE, checkUn
   counter = 1 + length(islands)
   #extract singleton islands
   u = list()
+  if (length(l) == 1) {
+    islands[[counter]] <- tree
+    return(islands)
+  }
   for (y in 1:l) {
     if (length(which(m[y,] <= x)) == 1){
       islands[[counter]] <- phytools::as.multiPhylo(tree[[y]])
