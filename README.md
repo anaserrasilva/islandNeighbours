@@ -118,7 +118,7 @@ Current functions unroot trees and ignore branch lengths, if there is enough int
 
 If you use *islandNeighbours* please cite:
 
-Serra Silva, Ana and Wilkinson, Mark (2021). [On Defining and Finding Islands of Trees and Mitigating Large Island Bias] (https://doi.org/10.1093/sysbio/syab015). Systematic Biology, 70(6), 1282-1294.
+Serra Silva, Ana and Wilkinson, Mark (2021). [On Defining and Finding Islands of Trees and Mitigating Large Island Bias](https://doi.org/10.1093/sysbio/syab015). Systematic Biology, 70(6), 1282-1294.
 
 ### Author contributions
 
