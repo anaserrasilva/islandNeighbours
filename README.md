@@ -99,13 +99,13 @@ write.islands(islands) #outputs 2 Newick formatted tree files, island_1.tre and 
 
 For large tree distributions (>500 trees) it is advisable to run the neighbourhood extraction in parallel, please set verbose = FALSE.
 
-There are two additional examples in the [supplementary materials](https://github.com/anaserrasilva/MajorityRuleAndTreeIslands/tree/master/PardoBayes_islands) for Serra Silva and Wilkinson (202#).
+There are two additional examples in the [supplementary materials](https://github.com/anaserrasilva/MajorityRuleAndTreeIslands/tree/master/PardoBayes_islands) for Serra Silva and Wilkinson (2021).
 
 
 ### Planned additions to *islandNeighbours*
 
 - Adding the capacity to deal with polytomies
-- Expand *nniNeighbours* to deal with *x*-NNI islands, described in Serra Silva and Wilkinson (202#)
+- Expand *nniNeighbours* to deal with *x*-NNI islands, described in Serra Silva and Wilkinson (2021)
 - Allow user to choose treefile format when using *write.islands*
 - Generalise the x-RF function to allow for other tree-to-tree distance, e.g. quartet distances
 - Add the capacity to extract SPR and TBR islands
