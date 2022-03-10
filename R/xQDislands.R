@@ -7,7 +7,6 @@
 #' @param threshold A numeric value setting the x-QD island threshold
 #' @param output 'Dummy' parameter required for recursive function with changing number of inputs from first to subsequent rounds of the function. Please ALWAYS add 'output = list()' as a parameter. 
 #' @param verbose Prints the function's progress. Defaults to TRUE. If run in parallel set to FALSE.
-#' @param checkUnique Parameter to check tree distribution is made up of unique trees. Defaults to TRUE for first round of recursion.
 #'
 #' @return List of "multiPhylo" objects
 #'
@@ -85,14 +84,14 @@ xQDislands <- function(tree, threshold, output = list(), verbose = TRUE){
   if (length(t) != l) {
     tree <- tree[-c(as.numeric(r))]
   }
-  to call recursive function
+  #to call recursive function
   t2 <- tree
   if (length(t2) == 1) {
     islands[[counter+1]] <- t2
     return(islands)
   }
   if (length(ape::unique.multiPhylo(c(tree,t), use.edge.length = F)) != length(tree)) {
-    xQDislands(tree, threshold, islands, checkUnique = FALSE)
+    xQDislands(tree, threshold, islands)
   }
   else {
     return(islands)

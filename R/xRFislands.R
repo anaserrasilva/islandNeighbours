@@ -8,7 +8,6 @@
 #' @param threshold A numeric value setting the x-RF island threshold
 #' @param output 'Dummy' parameter required for recursive function with changing number of inputs from first to subsequent rounds of the function. Please ALWAYS add 'output = list()' as a parameter. 
 #' @param verbose Prints the function's progress. Defaults to TRUE. If run in parallel set to FALSE.
-#' @param checkUnique Parameter to check tree distribution is made up of unique trees. Defaults to TRUE for first round of recursion.
 #'
 #' @return List of "multiPhylo" objects
 #'
