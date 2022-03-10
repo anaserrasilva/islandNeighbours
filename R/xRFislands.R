@@ -26,36 +26,15 @@
 #' rwty
 #'
 #' @export 
-xRFislands <- function(tree, threshold, output = list(), verbose = TRUE, checkUnique = TRUE){
+xRFislands <- function(tree, threshold, output = list(), verbose = TRUE){
   tree <- ape::unroot.multiPhylo(tree)
-  if (checkUnique == TRUE) {
-    tree <- ape::unique.multiPhylo(tree)
-  }
+  tree <- ape::unique.multiPhylo(tree)
   l <- length(tree)
   x <- threshold
   islands = output
   m <- rwty::tree.dist.matrix(tree)
   rownames(m) <- c(1:l)
   counter = 1 + length(islands)
-  #extract singleton islands
-  u = list()
-  if (length(l) == 1) {
-    islands[[counter]] <- tree
-    return(islands)
-  }
-  for (y in 1:l) {
-    if (length(which(m[y,] <= x)) == 1){
-      islands[[counter]] <- phytools::as.multiPhylo(tree[[y]])
-      u[counter] <- as.numeric(y)
-      counter = counter + 1
-    }
-  }
-  if (length(u) != 0) {
-    tree <- tree[-c(as.numeric(u))]
-    l <- length(tree)
-    m <- rwty::tree.dist.matrix(tree)
-    rownames(m) <- c(1:l)
-  }
   #adding property, equivalent of colour in graph-based clustering approaches
   p <- rep(c('a'), times = l)
   p[1] <- 'b'
@@ -89,12 +68,12 @@ xRFislands <- function(tree, threshold, output = list(), verbose = TRUE, checkUn
   }
   #to call recursive function
   t2 <- tree
-  # if (length(t2) == 1) {
-  #   islands[[counter+1]] <- t2
-  #   return(islands)
-  # }
+  if (length(t2) == 1) {
+    islands[[counter+1]] <- t2
+    return(islands)
+  }
   if (length(ape::unique.multiPhylo(c(t2,t), use.edge.length = F)) != length(t2)) {
-    xRFislands(tree, threshold, islands, checkUnique = FALSE)
+    xRFislands(tree, threshold, islands)
   }
   else {
     return(islands)

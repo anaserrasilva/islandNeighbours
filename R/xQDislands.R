@@ -25,11 +25,9 @@
 #' Quartet
 #'
 #' @export 
-xQDislands <- function(tree, threshold, output = list(), verbose = TRUE, checkUnique = TRUE){
+xQDislands <- function(tree, threshold, output = list(), verbose = TRUE){
   tree <- ape::unroot.multiPhylo(tree)
-  if (checkUnique == TRUE) {
-    tree <- ape::unique.multiPhylo(tree)
-  }
+  tree <- ape::unique.multiPhylo(tree)
   l <- length(tree)
   x <- threshold
   islands = output
@@ -87,12 +85,12 @@ xQDislands <- function(tree, threshold, output = list(), verbose = TRUE, checkUn
   if (length(t) != l) {
     tree <- tree[-c(as.numeric(r))]
   }
-  #to call recursive function
-  # t2 <- tree
-  # if (length(t2) == 1) {
-  #   islands[[counter+1]] <- t2
-  #   return(islands)
-  # }
+  to call recursive function
+  t2 <- tree
+  if (length(t2) == 1) {
+    islands[[counter+1]] <- t2
+    return(islands)
+  }
   if (length(ape::unique.multiPhylo(c(tree,t), use.edge.length = F)) != length(tree)) {
     xQDislands(tree, threshold, islands, checkUnique = FALSE)
   }
