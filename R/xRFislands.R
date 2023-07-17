@@ -27,7 +27,7 @@
 #' @export 
 xRFislands <- function(tree, threshold, output = list(), verbose = TRUE){
   tree <- ape::unroot.multiPhylo(tree)
-  #tree <- ape::unique.multiPhylo(tree)
+  tree <- ape::unique.multiPhylo(tree)
   l <- length(tree)
   x <- threshold
   islands = output
