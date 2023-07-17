@@ -36,7 +36,7 @@ xQDislands <- function(tree, threshold, output = list(), verbose = TRUE){
   counter = length(islands) + 1
   #extract singleton islands
   u = list()
-  if (length(l) == 1) {
+  if (l == 1) {
     islands[[counter]] <- tree
     return(islands)
   }
